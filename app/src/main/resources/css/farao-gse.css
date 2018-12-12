@@ -1,0 +1,8 @@
+.root {
+    -gse-app-bar-background-color: #e8e8e8;
+    -gse-app-bar-text-color: black;
+}
+
+.farao-about-pane {
+    -fx-effect: dropshadow(three-pass-box, #483f22, 10, 0, 4, 4);
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="remedialActionElementsBorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Label text="%RaRedispatchingType" BorderPane.alignment="CENTER_LEFT">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+<TableView fx:id="remedialActionElementsTable" >
+    <columns>
+        <TableColumn fx:id="remedialActionElementIDTabColumn" prefWidth="100.0" text="%RaElementID" />
+        <TableColumn fx:id="remedialActionmMinimumPowerTabColumn" prefWidth="100.0" text="%RaMinimumPower" />
+        <TableColumn fx:id="remedialActionMaximumPowerTabColumn" prefWidth="100.0" text="%RaMaximumPower" />
+        <TableColumn fx:id="remadialActionStartupCostTabColumn" prefWidth="100.0" text="%RaStartupCost" />
+        <TableColumn fx:id="remedialActionMarginalCostTabColumn" prefWidth="100.0" text="%RaMarginalCost" />
+    </columns>
+</TableView>
+    </center>
+</BorderPane>

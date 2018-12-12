@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="remedialActionElementsBorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Label text="%RaPSTType" BorderPane.alignment="CENTER_LEFT">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+<TableView fx:id="pstElementTable" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <columns>
+        <TableColumn fx:id="pstElementId" prefWidth="100.0" text="%PstId" />
+        <TableColumn fx:id="pstTypeOfLimit" prefWidth="100.0" text="%PstType" />
+        <TableColumn fx:id="pstMinStepRange" prefWidth="100.0" text="%MinStepRange" />
+        <TableColumn fx:id="pstMaxStepRange" prefWidth="100.0" text="%MaxStepRange" />
+    </columns>
+</TableView>
+    </center>
+</BorderPane>
