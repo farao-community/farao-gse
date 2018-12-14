@@ -8,5 +8,10 @@ addons:
         token:
             secure: ${SONAR_TOKEN}
 
+install:
+    # Build farao-core
+    - git clone https://github.com/farao-community/farao-core farao-community/farao-core
+    - pushd farao-community/farao-core && mvn -DskipTests install && popd
+
 script:
 - mvn clean verify sonar:sonar
