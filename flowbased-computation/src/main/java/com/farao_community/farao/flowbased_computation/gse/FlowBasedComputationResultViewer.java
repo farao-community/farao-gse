@@ -48,6 +48,11 @@ public class FlowBasedComputationResultViewer implements ProjectFileViewer, Init
     }
 
     @Override
+    public boolean isClosable() {
+        return true;
+    }
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }

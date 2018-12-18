@@ -43,6 +43,6 @@ cd <install-prefix>/bin
 
 ## Launching FARAO GSE application
 ```bash
-cd <install-prefix>/bin
-./farao-gse-launcher
+cd <install-prefix>/farao-gse
+./farao-gse
 ```

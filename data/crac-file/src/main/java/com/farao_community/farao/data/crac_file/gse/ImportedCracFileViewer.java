@@ -241,8 +241,16 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
                 return new SimpleStringProperty("");
             }
         });
+    }
 
+    @Override
+    public void dispose() {
+        // nothing to dispose
+    }
 
+    @Override
+    public boolean isClosable() {
+        return true;
     }
 
     public String getTypeFromRemedialAction(RemedialAction remedialAction) {
@@ -261,11 +269,6 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
             }
         });
         return String.join(", ", typeRa);
-    }
-
-    @Override
-    public void dispose() {
-        // nothing to dispose
     }
 
     private void remedialAction(RemedialAction remedialAction) {

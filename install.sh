@@ -91,7 +91,7 @@ farao_core_java()
     if [[ ${farao_gse_clean} = true || ${farao_gse_compile} = true || ${farao_gse_docs} = true || ${farao_gse_package} = true ]]; then
         echo "** Building farao Java modules"
 
-        mvn_options=""
+        mvn_options="-Pnative-package"
         [ ${farao_gse_clean} = true ] && mvn_options="$mvn_options clean"
         [ ${farao_gse_compile} = true ] && mvn_options="$mvn_options install"
         [ ${farao_gse_package} = true ] && mvn_options="$mvn_options package"
@@ -116,7 +116,7 @@ farao_install()
 
         echo "**** Copying files"
         mkdir -p "$farao_gse_prefix" || exit $?
-        cp -Rp "$sourceDir/distribution/target/farao-gse"/* "$farao_gse_prefix" || exit $?
+        cp -Rpf "$sourceDir/distribution/target/jfx/native"/farao-gse "$farao_gse_prefix" || exit $?
     fi
 }
 

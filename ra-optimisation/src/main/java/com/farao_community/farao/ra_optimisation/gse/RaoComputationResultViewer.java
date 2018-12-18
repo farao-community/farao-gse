@@ -51,6 +51,11 @@ public class RaoComputationResultViewer implements ProjectFileViewer, Initializa
     }
 
     @Override
+    public boolean isClosable() {
+        return true;
+    }
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }

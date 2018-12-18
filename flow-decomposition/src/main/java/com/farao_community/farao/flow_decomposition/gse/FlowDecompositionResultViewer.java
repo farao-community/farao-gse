@@ -99,6 +99,11 @@ public class FlowDecompositionResultViewer implements ProjectFileViewer {
         // nothing to dispose
     }
 
+    @Override
+    public boolean isClosable() {
+        return true;
+    }
+
     public void fillWithResults(FlowDecompositionResults results) {
         ObservableList<String> items = FXCollections.observableArrayList(results.getPerBranchResults().keySet().stream().sorted().collect(Collectors.toList()));
         branchesList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> selectBranch((String) newValue, results));

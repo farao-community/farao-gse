@@ -15,6 +15,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -39,8 +41,8 @@ public class FaraoBrandingConfigExtension implements BrandingExtension {
              * @return Image icon of the application
              */
             @Override
-            public Image getIcon16x16() {
-                return new Image(getClass().getResourceAsStream("/icone-lancement-farao.svg")); // icon of application
+            public List<Image> getIcons() {
+                return Collections.singletonList(new Image(getClass().getResourceAsStream("/icone-lancement-farao.svg"))); // icon of application
             }
 
             /**
