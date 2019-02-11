@@ -23,9 +23,9 @@ public final class FaraoAppDocumentation implements GseAppDocumentation {
     private final String url;
 
     public static Optional<GseAppDocumentation> getOptionalDocumentation(Application application) {
-        ModuleConfig farao = PlatformConfig.defaultConfig().getModuleConfigIfExists("farao-gse");
-        if (farao != null && farao.hasProperty("documentation-url")) {
-            return Optional.of(new FaraoAppDocumentation(application, farao.getStringProperty("documentation-url")));
+        Optional<ModuleConfig> faraoOptional = PlatformConfig.defaultConfig().getOptionalModuleConfig("farao-gse");
+        if (faraoOptional.isPresent() && faraoOptional.get().hasProperty("documentation-url")) {
+            return Optional.of(new FaraoAppDocumentation(application, faraoOptional.get().getStringProperty("documentation-url")));
         } else {
             return Optional.empty();
         }

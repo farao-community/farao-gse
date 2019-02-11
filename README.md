@@ -17,6 +17,7 @@ To build farao-gse, just do the following:
 
 ```
 $> git clone https://github.com/farao-community/farao-gse.git
+$> sudo dnf install java-1.8.0-openjdk-openjfx java-1.8.0-openjdk-openjfx-devel
 $> ./install.sh
 ```
 
