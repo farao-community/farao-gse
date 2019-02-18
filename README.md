@@ -9,6 +9,9 @@ For detailed information about FARAO toolbox, please refer to the [documentation
 In order to build **farao-gse**, you need the following environment available:
   - Install JDK *(1.8 or greater)*
   - Install Java FX
+  ```
+  $> sudo dnf install java-1.8.0-openjdk-openjfx java-1.8.0-openjdk-openjfx-devel
+  ```
   - Install Maven latest version
   - Install **farao-core**
 
@@ -17,14 +20,20 @@ To build farao-gse, just do the following:
 
 ```
 $> git clone https://github.com/farao-community/farao-gse.git
-$> sudo dnf install java-1.8.0-openjdk-openjfx java-1.8.0-openjdk-openjfx-devel
+$> cd farao-gse
 $> ./install.sh
+```
+By default it is installed in the "*$HOME/farao*" directory. This default install directory can
+be modified using *--prefix* option.
+
+```
+$> ./install.sh --prefix=/path/to/the/chosen/install/directory
 ```
 
 FARAO also needs a loadflow engine and a sensitivity calculation engine.
 
 Hades2 tool from RTE is available as a freeware for demonstration purpose.
-Fir more information about how to get and install Hades2 lodflow, please refer to the
+For more information about how to get and install Hades2 loadflow, please refer to the
 [dedicated documentation](https://rte-france.github.io/hades2/index.html)
 
 ## Configure your itools platform
@@ -44,6 +53,6 @@ cd <install-prefix>/bin
 
 ## Launching FARAO GSE application
 ```bash
-cd <install-prefix>/farao-gse
-./farao-gse
+cd <install-prefix>/bin
+./farao-gse-launcher
 ```
