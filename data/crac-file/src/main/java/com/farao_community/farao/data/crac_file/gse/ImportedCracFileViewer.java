@@ -94,7 +94,7 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
     private TableColumn<ContingencyElement, String> contingencyElementIDTabColumn;
 
     @FXML
-    private TableColumn<Contingency, String> contingencyElementNameTabColumn;
+    private TableColumn<ContingencyElement, String> contingencyElementNameTabColumn;
 
     @FXML
     private TableView<MonitoredBranch> postContingencyMonitoredBranchesTable;
@@ -155,7 +155,7 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
 
     private CracFileProvider cracFileProvider;
 
-    public ImportedCracFileViewer(CracFileProvider cracFileProvider, GseContext gseContext) {
+    ImportedCracFileViewer(CracFileProvider cracFileProvider, GseContext gseContext) {
         this.cracFileProvider = Objects.requireNonNull(cracFileProvider);
         this.gseContext = gseContext;
     }
@@ -166,7 +166,7 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
         fxmlLoader.setResources(ResourceBundle.getBundle("lang.ImportedCracFileViewer"));
         fxmlLoader.setController(this);
 
-        Node content = null;
+        Node content;
         try {
             content = fxmlLoader.load();
         } catch (IOException e) {
@@ -197,46 +197,45 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
         String rateString = contingenciesNbr == 0 ? "N/A" : String.valueOf(monitoredBranchesNbr / contingenciesNbr);
         rateMonitoredBranchesField.setText(rateString);
 
-        // Precontiongencies
-        MonitoredBranch[] details = cracFile.getPreContingency().getMonitoredBranches().stream()
-                .toArray(MonitoredBranch[]::new);
+        // Pre contiongencies
+        MonitoredBranch[] details = cracFile.getPreContingency().getMonitoredBranches().toArray(new MonitoredBranch[0]);
         monitoredBranchesTable.setItems(FXCollections.observableArrayList(details));
 
-        idTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, String>("id"));
-        nameTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, String>("name"));
-        branchIdTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, String>("branchId"));
-        fmaxTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, Double>("fmax"));
+        idTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        branchIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("branchId"));
+        fmaxTableColumn.setCellValueFactory(new PropertyValueFactory<>("fmax"));
 
         // PostContingencies
-        Contingency[] contingencyTable = cracFile.getContingencies().stream().toArray(Contingency[]::new);
+        Contingency[] contingencyTable = cracFile.getContingencies().toArray(new Contingency[0]);
         contingenciesTable.setItems(FXCollections.observableArrayList(contingencyTable));
-        contingenciesIDTabColumn.setCellValueFactory(new PropertyValueFactory<Contingency, String>("id"));
-        contingenciesNameTabColumn.setCellValueFactory(new PropertyValueFactory<Contingency, String>("name"));
+        contingenciesIDTabColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        contingenciesNameTabColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-        contingencyElementIDTabColumn.setCellValueFactory(new PropertyValueFactory<ContingencyElement, String>("elementId"));
-        contingencyElementNameTabColumn.setCellValueFactory(new PropertyValueFactory<Contingency, String>("name"));
+        contingencyElementIDTabColumn.setCellValueFactory(new PropertyValueFactory<>("elementId"));
+        contingencyElementNameTabColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-        postContingencyIdTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, String>("id"));
-        postContingencyNameTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, String>("name"));
-        postContingencyBranchIdTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, String>("branchId"));
-        postContingencyFmaxTableColumn.setCellValueFactory(new PropertyValueFactory<MonitoredBranch, Double>("fmax"));
+        postContingencyIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        postContingencyNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        postContingencyBranchIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("branchId"));
+        postContingencyFmaxTableColumn.setCellValueFactory(new PropertyValueFactory<>("fmax"));
 
         //Remedial Action
-        RemedialAction[] raTable = cracFile.getRemedialActions().stream().toArray(RemedialAction[]::new);
+        RemedialAction[] raTable = cracFile.getRemedialActions().toArray(new RemedialAction[0]);
         remedialActionTable.setItems(FXCollections.observableArrayList(raTable));
-        remedialActionIDTabColumn.setCellValueFactory(new PropertyValueFactory<RemedialAction, String>("id"));
-        remedialActionNameTabColumn.setCellValueFactory(new PropertyValueFactory<RemedialAction, String>("name"));
+        remedialActionIDTabColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        remedialActionNameTabColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         // Usage rules
-        raUsageRulesIdTableColumn.setCellValueFactory(new PropertyValueFactory<UsageRule, String>("id"));
-        raUsageRulesInstantTableColumn.setCellValueFactory(new PropertyValueFactory<UsageRule, String>("instants"));
-        raUsageColumn.setCellValueFactory(new PropertyValueFactory<UsageRule, String>("usage"));
-        raContingenciesColumn.setCellValueFactory(new PropertyValueFactory<UsageRule, String>("contingenciesID"));
-        raCriticalBranchColumn.setCellValueFactory(new PropertyValueFactory<UsageRule, String>("constraintsID"));
+        raUsageRulesIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        raUsageRulesInstantTableColumn.setCellValueFactory(new PropertyValueFactory<>("instants"));
+        raUsageColumn.setCellValueFactory(new PropertyValueFactory<>("usage"));
+        raContingenciesColumn.setCellValueFactory(new PropertyValueFactory<>("contingenciesID"));
+        raCriticalBranchColumn.setCellValueFactory(new PropertyValueFactory<>("constraintsID"));
 
-        remedialActionTypeTabColumn.setCellValueFactory(cellDataFatures -> {
-            if (cellDataFatures.getValue() != null) {
-                return new SimpleStringProperty(getTypeFromRemedialAction(cellDataFatures.getValue()));
+        remedialActionTypeTabColumn.setCellValueFactory(cellDataFeatures -> {
+            if (cellDataFeatures.getValue() != null) {
+                return new SimpleStringProperty(getTypeFromRemedialAction(cellDataFeatures.getValue()));
             } else {
                 return new SimpleStringProperty("");
             }
@@ -253,13 +252,13 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
         return true;
     }
 
-    public String getTypeFromRemedialAction(RemedialAction remedialAction) {
+    private String getTypeFromRemedialAction(RemedialAction remedialAction) {
         List<Class> classes = remedialAction.getRemedialActionElements().stream()
                 .map(RemedialActionElement::getClass)
                 .distinct()
                 .collect(Collectors.toList());
         List<String> typeRa = new ArrayList<>();
-        classes.stream().forEach(type -> {
+        classes.forEach(type -> {
             if (type.equals(RedispatchRemedialActionElement.class)) {
                 typeRa.add(RESOURCE_BUNDLE.getString("RaRedispatchingType"));
             }
@@ -320,7 +319,6 @@ public class ImportedCracFileViewer implements ProjectFileViewer, Initializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // nothing to initialize
         contingenciesTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> selectContingency(newValue));
         remedialActionTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> remedialAction(newValue));
     }

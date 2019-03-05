@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<TabPane prefHeight="480.0" prefWidth="673.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="%OverviewTab">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <SplitPane fx:id="overviewSplitPane" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER" />
+               </center></BorderPane>
+         </content>
+    </Tab>
+    <Tab text="%PreContingencyTab">
+         <content>
+            <TableView fx:id="monitoredBranchResultsTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="%ID" />
+                <TableColumn fx:id="nameTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="%Name" />
+                  <TableColumn fx:id="branchIdTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="%BranchID" />
+                  <TableColumn fx:id="preOptimisationFlowTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PreOptimisationFlow" />
+                  <TableColumn fx:id="preOptimisationOverloadTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PreOptimisationOverload" />
+                  <TableColumn fx:id="postOptimisationFlowTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PostOptimisationFlow" />
+                  <TableColumn fx:id="postOptimisationOverloadTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PostOptimisationOverload" />
+                  <TableColumn fx:id="maximumFlowTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%MaximumFlow" />
+              </columns>
+            </TableView>
+         </content>
+    </Tab>
+      <Tab text="%PostContingencyTab">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <TreeTableView fx:id="cbcoTreeTable" BorderPane.alignment="CENTER">
+                    <columns>
+                        <TreeTableColumn fx:id="idAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="%ID" />
+                        <TreeTableColumn fx:id="nameAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="%Name" />
+                        <TreeTableColumn fx:id="branchIdAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="%BranchID" />
+                        <TreeTableColumn fx:id="preOptimisationFlowAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PreOptimisationFlow" />
+                        <TreeTableColumn fx:id="preOptimisationOverloadAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PreOptimisationOverload" />
+                        <TreeTableColumn fx:id="postOptimisationFlowAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PostOptimisationFlow" />
+                        <TreeTableColumn fx:id="postOptimisationOverloadAfterCoTableColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%PostOptimisationOverload" />
+                        <TreeTableColumn fx:id="maximumFlowTableAfterCoColumn" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="%MaximumFlow" />
+                    </columns>
+                  </TreeTableView>
+               </center>
+            </BorderPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
