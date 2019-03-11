@@ -143,12 +143,6 @@
         </dependency>
         <dependency>
             <groupId>com.powsybl</groupId>
-            <artifactId>powsybl-gse-network-map</artifactId>
-            <version>${powsybl.gse.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.powsybl</groupId>
             <artifactId>powsybl-scripting</artifactId>
             <version>${powsybl.core.version}</version>
             <scope>runtime</scope>
