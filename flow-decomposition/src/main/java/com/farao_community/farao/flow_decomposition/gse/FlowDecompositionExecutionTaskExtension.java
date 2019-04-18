@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 /**
  * Flow decomposition task runner plugin
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(ProjectFileExecutionTaskExtension.class)
 public class FlowDecompositionExecutionTaskExtension implements ProjectFileExecutionTaskExtension<FlowDecompositionRunner, Void> {

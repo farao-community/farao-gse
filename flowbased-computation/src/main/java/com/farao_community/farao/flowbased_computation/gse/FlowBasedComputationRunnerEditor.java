@@ -13,7 +13,7 @@ import com.farao_community.farao.flowbased_computation.afs.FlowBasedComputationR
 import javafx.scene.Scene;
 
 /**
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 public class FlowBasedComputationRunnerEditor extends AbstractFlowBasedComputationRunnerPane<FlowBasedComputationRunner> implements ProjectFileEditor {
 

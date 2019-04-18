@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 /**
  * Flow decomposition results XLSX export parameters
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 class XlsxOutputExporterParameters {
 

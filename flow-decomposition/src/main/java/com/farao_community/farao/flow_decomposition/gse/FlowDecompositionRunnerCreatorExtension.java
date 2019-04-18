@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 /**
  * Flow decomposition runner creator plugin
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(ProjectFileCreatorExtension.class)
 public class FlowDecompositionRunnerCreatorExtension implements ProjectFileCreatorExtension {

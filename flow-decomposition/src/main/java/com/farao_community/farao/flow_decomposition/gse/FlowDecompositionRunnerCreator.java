@@ -17,7 +17,7 @@ import javafx.scene.Scene;
 /**
  * Flow decomposition runner creator
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 public class FlowDecompositionRunnerCreator extends AbstractFlowDecompositionRunnerPane<ProjectFolder> implements ProjectFileCreator {
 

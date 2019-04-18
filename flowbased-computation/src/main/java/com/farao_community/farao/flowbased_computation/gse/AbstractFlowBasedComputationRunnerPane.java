@@ -28,7 +28,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 abstract class AbstractFlowBasedComputationRunnerPane<T extends ProjectNode> extends GridPane {
 

@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
 /**
  * Flow decomposition results viewer
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 public class FlowDecompositionResultViewer implements ProjectFileViewer {
 

@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 /**
  * Flow decomposition runner editor plugin
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(ProjectFileEditorExtension.class)
 public class FlowDecompositionRunnerEditorExtension implements ProjectFileEditorExtension {

@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 /**
  * Rao computation results export parameters
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 class OutputExporterParameters {
     private String filePath;

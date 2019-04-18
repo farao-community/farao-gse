@@ -43,7 +43,7 @@ import java.util.UUID;
 /**
  * Rao computation results export plugin
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(ProjectFileExecutionTaskExtension.class)
 public class OutputExporterExtension implements ProjectFileExecutionTaskExtension<RaoComputationRunner, OutputExporterParameters> {

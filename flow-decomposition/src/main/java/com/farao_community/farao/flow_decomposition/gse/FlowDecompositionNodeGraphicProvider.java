@@ -15,7 +15,7 @@ import javafx.scene.Node;
 /**
  * Icons management plugin
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(NodeGraphicProvider.class)
 public class FlowDecompositionNodeGraphicProvider implements NodeGraphicProvider {

@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 /**
  * Flow decomposition results viewer plugin
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(ProjectFileViewerExtension.class)
 public class FlowDecompositionResultViewerExtension implements ProjectFileViewerExtension<FlowDecompositionRunner> {

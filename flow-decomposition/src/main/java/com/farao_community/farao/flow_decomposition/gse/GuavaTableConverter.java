@@ -17,11 +17,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
-/*
+/**
  * Utility class for dealing with Guava table conversion to
  * JavaFX TableView data
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 public final class GuavaTableConverter {
 

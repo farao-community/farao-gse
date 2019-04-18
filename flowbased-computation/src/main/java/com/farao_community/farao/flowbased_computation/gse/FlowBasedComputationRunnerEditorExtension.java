@@ -17,7 +17,7 @@ import javafx.scene.Scene;
 import java.util.ResourceBundle;
 
 /**
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(ProjectFileEditorExtension.class)
 public class FlowBasedComputationRunnerEditorExtension implements ProjectFileEditorExtension {

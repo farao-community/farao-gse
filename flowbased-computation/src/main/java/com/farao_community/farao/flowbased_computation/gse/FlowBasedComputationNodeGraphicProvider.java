@@ -15,7 +15,7 @@ import javafx.scene.Node;
 /**
  * Add icons
  *
- * @author Sebastien Murgey <sebastien.murgey at rte-france.com>
+ * @author Sebastien Murgey {@literal <sebastien.murgey at rte-france.com>}
  */
 @AutoService(NodeGraphicProvider.class)
 public class FlowBasedComputationNodeGraphicProvider implements NodeGraphicProvider {
