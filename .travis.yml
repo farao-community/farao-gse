@@ -14,4 +14,4 @@ install:
     - pushd farao-community/farao-core && mvn -DskipTests install && popd
 
 script:
-- mvn clean verify sonar:sonar
+- mvn --batch-mode clean verify sonar:sonar
