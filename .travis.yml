@@ -11,7 +11,7 @@ addons:
 install:
     # Build farao-core
     - git clone https://github.com/farao-community/farao-core farao-community/farao-core
-    - pushd farao-community/farao-core && mvn -DskipTests install && popd
+    - pushd farao-community/farao-core && mvn --batch-mode -DskipTests install && popd
 
 script:
 - mvn --batch-mode clean verify sonar:sonar
